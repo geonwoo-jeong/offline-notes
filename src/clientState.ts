@@ -1,6 +1,25 @@
 import { NOTE_FRAGMENT } from "./fragments";
+import { GET_NOTES } from "./queries";
 
 export const resolvers = {
+  Mutation: {
+    createNote: (_, variables, { cache }) => {
+      const { notes } = cache.readQuery({ query: GET_NOTES });
+      const { title, content } = variables;
+      const newNote = {
+        __typename: "Note",
+        content,
+        id: notes.length + 1,
+        title
+      };
+      cache.writeData({
+        data: {
+          notes: [newNote, ...notes]
+        }
+      });
+      return newNote;
+    }
+  },
   Query: {
     note: (_, variables, { cache }) => {
       const id = cache.config.dataIdFromObject({

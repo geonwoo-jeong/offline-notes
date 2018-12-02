@@ -56,7 +56,7 @@ export const defaults = {
   notes: [
     {
       __typename: "Note",
-      content: "Second",
+      content: "## Second",
       id: 1,
       title: "First"
     }

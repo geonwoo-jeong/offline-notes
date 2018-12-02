@@ -8,9 +8,9 @@ const cache = new InMemoryCache();
 
 const stateLink = withClientState({
   cache,
-  typeDefs,
   defaults,
-  resolvers
+  resolvers,
+  typeDefs
 });
 
 const client = new ApolloClient({

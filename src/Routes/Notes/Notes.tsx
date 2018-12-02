@@ -30,15 +30,17 @@ export default class NotesContainer extends Component {
         <Title title={"Offline Notes"} link={"/add"} button={<Plus />} />
         <Subtitle>Taking notes while we learn.</Subtitle>
         <Query query={GET_NOTES}>
-          {({ data }) =>
-            data.notes
-              ? data.notes.map(note => (
-                  <Link to={`/note/${note.id}`} key={note.id}>
-                    <Note>{note.title}</Note>
-                  </Link>
-                ))
-              : null
-          }
+          {({ data }) => {
+            if (data.notes) {
+              return data.notes.map(note => (
+                <Link to={`/note/${note.id}`} key={note.id}>
+                  <Note>{note.title}</Note>
+                </Link>
+              ));
+            } else {
+              return <div>No notes</div>;
+            }
+          }}
         </Query>
       </>
     );

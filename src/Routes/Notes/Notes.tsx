@@ -3,31 +3,8 @@ import { Query } from "react-apollo";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { ReactComponent as Plus } from "../../Components/plus.svg";
+import Title from "../../Components/Title";
 import { GET_NOTES } from "../../queries";
-
-const Header = styled.div`
-  margin-bottom: 50px;
-`;
-
-const Title = styled.h1`
-  font-size: 50px;
-  font-weight: 600;
-  margin: 0;
-  margin-bottom: 30px;
-  display: flex;
-  align-items: center;
-`;
-
-const Button = styled.div`
-  margin-left: 10px;
-  transform: scale(0.8);
-  background-color: #eee;
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  border-radius: 10px;
-  cursor: pointer;
-`;
 
 const Subtitle = styled.h2`
   color: #a2a19e;
@@ -50,22 +27,13 @@ export default class NotesContainer extends Component {
   public render() {
     return (
       <>
-        <Header>
-          <Title>
-            Offline Notes
-            <Link to={"/add"}>
-              <Button>
-                <Plus />
-              </Button>
-            </Link>
-          </Title>
-          <Subtitle>Taking notes while we learn.</Subtitle>
-        </Header>
+        <Title title={"Offline Notes"} link={"/add"} button={<Plus />} />
+        <Subtitle>Taking notes while we learn.</Subtitle>
         <Query query={GET_NOTES}>
           {({ data }) =>
             data.notes
               ? data.notes.map(note => (
-                  <Link to={`/edit/${note.id}`} key={note.id}>
+                  <Link to={`/note/${note.id}`} key={note.id}>
                     <Note>{note.title}</Note>
                   </Link>
                 ))

@@ -1,6 +1,6 @@
 import gql from "graphql-tag";
 import React, { Component } from "react";
-import { Mutation } from "react-apollo";
+import { Mutation, MutationFn } from "react-apollo";
 import { RouteComponentProps } from "react-router-dom";
 import Editor from "../../Components/Editor";
 
@@ -19,7 +19,6 @@ interface IaddNote {
 interface IaddNoteVariables {
   title: string;
   content: string;
-  id: number;
 }
 
 interface IProps extends RouteComponentProps<any> {}
@@ -27,7 +26,7 @@ interface IProps extends RouteComponentProps<any> {}
 class AddNoteMutation extends Mutation<IaddNote, IaddNoteVariables> {}
 
 export default class Add extends Component<IProps> {
-  private createNote;
+  private createNote!: MutationFn<IaddNote, IaddNoteVariables>;
   public onSave = (title: string, content: string) => {
     const {
       history: { push }

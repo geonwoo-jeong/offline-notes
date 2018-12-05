@@ -12,21 +12,21 @@ const ADD_NOTE = gql`
   }
 `;
 
-interface IaddNote {
+interface IAddNote {
   id: number;
 }
 
-interface IaddNoteVariables {
+interface IAddNoteVariables {
   title: string;
   content: string;
 }
 
 interface IProps extends RouteComponentProps<any> {}
 
-class AddNoteMutation extends Mutation<IaddNote, IaddNoteVariables> {}
+class AddNoteMutation extends Mutation<IAddNote, IAddNoteVariables> {}
 
 export default class Add extends Component<IProps> {
-  private createNote!: MutationFn<IaddNote, IaddNoteVariables>;
+  private createNote!: MutationFn<IAddNote, IAddNoteVariables>;
   public onSave = (title: string, content: string) => {
     const {
       history: { push }

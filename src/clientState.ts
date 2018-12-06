@@ -22,7 +22,7 @@ export const resolvers = {
       const updatedNote = {
         __typename: "Note",
         content,
-        id: noteId,
+        id,
         title
       };
       cache.writeFragment({

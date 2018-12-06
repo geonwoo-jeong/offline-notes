@@ -48,7 +48,6 @@ export default class EditContainer extends Component<IProps> {
       history: { push }
     } = this.props;
     if (title !== "" && content !== "" && id) {
-      id = 1;
       this.editNote({ variables: { title, content, id } });
       push("/");
     }

@@ -50,7 +50,7 @@ export default class Editor extends Component<IProps, IState> {
     super(props);
     this.state = {
       content: props.content || "",
-      id: props.content || null,
+      id: props.id || null,
       title: props.title || ""
     };
   }

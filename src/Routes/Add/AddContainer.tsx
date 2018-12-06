@@ -16,18 +16,8 @@ const ADD_NOTE = gql`
   }
 `;
 
-export default class Add extends Component<IProps> {
+export default class AddContainer extends Component<IProps> {
   private createNote!: MutationFn<addNote, addNoteVariables>;
-
-  public onSave = (title: string, content: string) => {
-    const {
-      history: { push }
-    } = this.props;
-    if (title !== "" && content !== "") {
-      this.createNote({ variables: { title, content } });
-      push("/");
-    }
-  };
 
   public render() {
     return (
@@ -39,4 +29,14 @@ export default class Add extends Component<IProps> {
       </AddNoteMutation>
     );
   }
+
+  public onSave = (title: string, content: string) => {
+    const {
+      history: { push }
+    } = this.props;
+    if (title !== "" && content !== "") {
+      this.createNote({ variables: { title, content } });
+      push("/");
+    }
+  };
 }

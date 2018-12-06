@@ -6,6 +6,9 @@ import styled from "styled-components";
 interface IProps {
   onChange: any;
   onSave: any;
+  title?: string;
+  content?: string;
+  id?: number;
 }
 
 interface IState {

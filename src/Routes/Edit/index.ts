@@ -1,2 +1,2 @@
-import Edit from "./Edit";
-export default Edit;
+import EditContainer from "./EditContainer";
+export default EditContainer;

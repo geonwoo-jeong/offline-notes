@@ -2,6 +2,36 @@ import { NOTE_FRAGMENT } from "./fragments";
 import { GET_NOTES } from "./queries";
 
 export const resolvers = {
+  editNote: (_, { id, title, content }, { cache }) => {
+    const noteId = cache.config.dataIdFromObject({
+      __typename: "Note",
+      id
+    });
+    const note = cache.readFragment({ fragment: NOTE_FRAGMENT, id: noteId });
+    const updatedNote = {
+      ...note,
+      content,
+      title
+    };
+    cache.writeFragment({
+      data: updatedNote,
+      fragment: NOTE_FRAGMENT,
+      id: noteId
+    });
+    return updatedNote;
+  },
+
+  Query: {
+    note: (_, variables, { cache }) => {
+      const id = cache.config.dataIdFromObject({
+        __typename: "Note",
+        id: variables.id
+      });
+      const note = cache.readFragment({ fragment: NOTE_FRAGMENT, id });
+      return note;
+    }
+  },
+
   Mutation: {
     createNote: (_, variables, { cache }) => {
       const { notes } = cache.readQuery({ query: GET_NOTES });
@@ -18,40 +48,10 @@ export const resolvers = {
         }
       });
       return newNote;
-    },
-    editNote: (_, { id, title, content }, { cache }) => {
-      const noteId = cache.config.dataIdFromObject({
-        __typename: "Note",
-        id
-      });
-      const note = cache.readFragment({ fragment: NOTE_FRAGMENT, id: noteId });
-      const updatedNote = {
-        ...note,
-        content,
-        title
-      };
-      cache.writeFragment({
-        data: updatedNote,
-        fragment: NOTE_FRAGMENT,
-        id: noteId
-      });
-      return updatedNote;
-    }
-  },
-  Query: {
-    note: (_, variables, { cache }) => {
-      const id = cache.config.dataIdFromObject({
-        __typename: "Note",
-        id: variables.id
-      });
-      const note = cache.readFragment({
-        fragment: NOTE_FRAGMENT,
-        id
-      });
-      return note;
     }
   }
 };
+
 export const defaults = {
   notes: [
     {

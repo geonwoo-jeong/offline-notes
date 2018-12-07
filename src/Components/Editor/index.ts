@@ -1,2 +1,2 @@
-import Editor from "./Editor";
-export default Editor;
+import EditorContainer from "./EditorContainer";
+export default EditorContainer;

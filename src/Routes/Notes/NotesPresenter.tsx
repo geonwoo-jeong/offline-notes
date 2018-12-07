@@ -1,7 +1,7 @@
 import React, { SFC } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { ReactComponent as Plus } from "../../Components/plus.svg";
+import { ReactComponent as Plus } from "../../Components/Icons/plus.svg";
 import Title from "../../Components/Title";
 
 const Note = styled.div`

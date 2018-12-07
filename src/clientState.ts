@@ -1,5 +1,5 @@
 import { NOTE_FRAGMENT } from "./fragments";
-import { saveNotes } from "./offline";
+import { restoreNotes, saveNotes } from "./offline";
 import { GET_NOTES } from "./queries";
 
 export const resolvers = {
@@ -56,7 +56,7 @@ export const resolvers = {
 };
 
 export const defaults = {
-  notes: []
+  notes: restoreNotes()
 };
 export const typeDefs = [
   `

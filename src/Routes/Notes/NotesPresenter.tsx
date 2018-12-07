@@ -35,7 +35,6 @@ const NotesPresenter: SFC<IProps> = ({ data }) => (
           <Note>{note.title}</Note>
         </Link>
       ))}
-    {!data.notes && <Note>Does not exist Note.</Note>}
   </>
 );
 

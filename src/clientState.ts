@@ -1,4 +1,5 @@
 import { NOTE_FRAGMENT } from "./fragments";
+import { saveNotes } from "./offline";
 import { GET_NOTES } from "./queries";
 
 export const resolvers = {
@@ -30,6 +31,7 @@ export const resolvers = {
         fragment: NOTE_FRAGMENT,
         id: noteId
       });
+      saveNotes(cache);
       return updatedNote;
     },
 
@@ -47,20 +49,14 @@ export const resolvers = {
           notes: [newNote, ...notes]
         }
       });
+      saveNotes(cache);
       return newNote;
     }
   }
 };
 
 export const defaults = {
-  notes: [
-    {
-      __typename: "Note",
-      content: "## Second",
-      id: 1,
-      title: "First"
-    }
-  ]
+  notes: []
 };
 export const typeDefs = [
   `

@@ -8,12 +8,28 @@ import Notes from "../../Routes/Notes";
 class App extends Component {
   public render() {
     return (
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Switch>
-          <Route exact={true} path={"/"} component={Notes} />
-          <Route exact={true} path={"/add"} component={Add} />
-          <Route exact={true} path={"/edit/:id"} component={Edit} />
-          <Route exact={true} path={"/note/:id"} component={Note} />
+          <Route
+            exact={true}
+            path={process.env.PUBLIC_URL + "/"}
+            component={Notes}
+          />
+          <Route
+            exact={true}
+            path={process.env.PUBLIC_URL + "/add"}
+            component={Add}
+          />
+          <Route
+            exact={true}
+            path={process.env.PUBLIC_URL + "/edit/:id"}
+            component={Edit}
+          />
+          <Route
+            exact={true}
+            path={process.env.PUBLIC_URL + "/note/:id"}
+            component={Note}
+          />
         </Switch>
       </BrowserRouter>
     );

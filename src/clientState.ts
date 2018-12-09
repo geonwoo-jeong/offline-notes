@@ -1,13 +1,12 @@
 import { NOTE_FRAGMENT } from "./fragments";
 import { restoreNotes, saveNotes } from "./offline";
 import { GET_NOTES } from "./queries";
-import { NOTE } from "./types";
 
 export const resolvers = {
   Query: {
     note: (_, variables, { cache }) => {
       const id = cache.config.dataIdFromObject({
-        __typename: NOTE,
+        __typename: "Note",
         id: variables.id
       });
       const note = cache.readFragment({ fragment: NOTE_FRAGMENT, id });
@@ -18,11 +17,11 @@ export const resolvers = {
   Mutation: {
     editNote: (_, { id, content, title }, { cache }) => {
       const noteId = cache.config.dataIdFromObject({
-        __typename: NOTE,
+        __typename: "Note",
         id
       });
       const updatedNote = {
-        __typename: NOTE,
+        __typename: "Note",
         content,
         id,
         title
@@ -40,7 +39,7 @@ export const resolvers = {
       const { notes } = cache.readQuery({ query: GET_NOTES });
       const { title, content } = variables;
       const newNote = {
-        __typename: NOTE,
+        __typename: "Note",
         content,
         id: notes.length + 1,
         title

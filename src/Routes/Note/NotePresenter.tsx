@@ -19,7 +19,11 @@ const NotePresenter: SFC<IProps> = ({ data }) => {
     );
   } else {
     return (
-      <Title title={"This Note does not exist."} button={"Back"} link={"/"} />
+      <Title
+        title={"This Note does not exist."}
+        button={"back to index"}
+        link={"/"}
+      />
     );
   }
 };

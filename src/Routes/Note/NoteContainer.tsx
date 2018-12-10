@@ -1,7 +1,7 @@
+import { GET_NOTE } from "queries";
 import React, { Component } from "react";
 import { Query } from "react-apollo";
 import { RouteComponentProps } from "react-router-dom";
-import { GET_NOTE } from "../../queries";
 import NotePresenter from "./NotePresenter";
 
 interface IProps extends RouteComponentProps<any> {}

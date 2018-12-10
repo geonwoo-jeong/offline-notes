@@ -1,6 +1,6 @@
+import { GET_NOTES } from "queries";
 import React, { Component } from "react";
 import { Query } from "react-apollo";
-import { GET_NOTES } from "../../queries";
 import NotesPresenter from "./NotesPresenter";
 
 export default class NotesContainer extends Component {

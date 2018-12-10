@@ -1,9 +1,9 @@
 import React, { SFC } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Add from "../../Routes/Add";
-import Edit from "../../Routes/Edit";
-import Note from "../../Routes/Note";
-import Notes from "../../Routes/Notes";
+import Add from "Routes/Add";
+import Edit from "Routes/Edit";
+import Note from "Routes/Note";
+import Notes from "Routes/Notes";
 
 const App: SFC = () => (
   <BrowserRouter>

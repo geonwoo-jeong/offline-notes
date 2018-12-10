@@ -1,5 +1,5 @@
+import Editor from "Components/Editor";
 import React, { SFC } from "react";
-import Editor from "../../Components/Editor";
 
 interface IProps {
   onSave: (title: string, content: string) => void;

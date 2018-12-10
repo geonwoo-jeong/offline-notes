@@ -1,6 +1,6 @@
+import Title from "Components/Title";
 import React, { SFC } from "react";
 import MarkdownRenderer from "react-markdown-renderer";
-import Title from "../../Components/Title";
 
 interface IProps {
   data: any;

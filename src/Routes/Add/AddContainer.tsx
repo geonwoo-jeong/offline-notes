@@ -2,7 +2,7 @@ import gql from "graphql-tag";
 import React, { Component } from "react";
 import { Mutation, MutationFn } from "react-apollo";
 import { RouteComponentProps } from "react-router-dom";
-import { addNote, addNoteVariables } from "../../types/api";
+import { addNote, addNoteVariables } from "types/api";
 import AddPresenter from "./AddPresenter";
 
 interface IProps extends RouteComponentProps<any> {}

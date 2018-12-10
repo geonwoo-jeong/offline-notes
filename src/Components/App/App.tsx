@@ -6,7 +6,7 @@ import Note from "Routes/Note";
 import Notes from "Routes/Notes";
 
 const App: SFC = () => (
-  <BrowserRouter>
+  <BrowserRouter basename={""}>
     <Switch>
       <Route exact={true} path={"/"} component={Notes} />
       <Route exact={true} path={"/add"} component={Add} />

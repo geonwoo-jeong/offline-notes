@@ -2,7 +2,7 @@
   "name": "offline-notes",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://geonwoo-jeong.github.io/offline-notes/",
+  "homepage": "https://geonwoo-jeong.github.io/offline-notes",
   "dependencies": {
     "apollo-cache-inmemory": "^1.3.11",
     "apollo-client": "^2.4.7",

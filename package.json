@@ -16,17 +16,16 @@
     "react-dom": "^16.6.3",
     "react-markdown-renderer": "^1.4.0",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "2.1.1",
+    "react-scripts-ts": "^3.1.0",
     "react-textarea-autosize": "^7.1.0-1",
     "styled-components": "^4.1.1",
-    "styled-reset": "^1.6.1",
-    "typescript": "^3.1.6"
+    "styled-reset": "^1.6.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "start": "react-scripts-ts start",
+    "build": "react-scripts-ts build",
+    "test": "react-scripts-ts test",
+    "eject": "react-scripts-ts eject",
     "predeploy": "yarn build",
     "deploy": "gh-pages -d build -b master"
   },
@@ -48,6 +47,7 @@
     "gh-pages": "^2.0.1",
     "tslint": "^5.11.0",
     "tslint-config-prettier": "^1.16.0",
-    "tslint-react": "^3.6.0"
+    "tslint-react": "^3.6.0",
+    "typescript": "^3.2.2"
   }
 }

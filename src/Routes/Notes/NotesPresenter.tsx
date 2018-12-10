@@ -1,7 +1,7 @@
 import React, { SFC } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { ReactComponent as Plus } from "../../Components/Icons/plus.svg";
+// import { ReactComponent as Plus } from "../../Components/Icons/plus.svg";
 import Title from "../../Components/Title";
 
 const Note = styled.div`
@@ -27,7 +27,7 @@ interface IProps {
 
 const NotesPresenter: SFC<IProps> = ({ data }) => (
   <>
-    <Title title={"Offline Notes"} link={"/add"} button={<Plus />} />
+    <Title title={"Offline Notes"} link={"/add"} button={"+"} />
     <Subtitle>Taking notes while we learn.</Subtitle>
     {data.notes &&
       data.notes.map(note => (

@@ -10,5 +10,5 @@ ReactDOM.render(
     <GlobalStyle />
     <App />
   </ApolloProvider>,
-  document.getElementById("root")
+  document.getElementById("root") as HTMLElement
 );

@@ -4,8 +4,7 @@
     "max-classes-per-file": false,
     "no-console": false,
     "jsx-no-lambda": false,
-    "no-unused-expression": [true, "allow-tagged-template"],
-    "disallow-rxjs-operators-full-import": true
+    "no-unused-expression": [true, "allow-tagged-template"]
   },
   "linterOptions": {
     "exclude": ["node_modules/**/*.ts"]
